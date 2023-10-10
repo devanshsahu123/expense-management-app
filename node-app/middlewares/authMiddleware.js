@@ -13,7 +13,6 @@ module.exports = async (req, res, next) => {
                         error:"Token verification failed"
                     })
                 }
-                console.log(decoded,"decoded");
                 req.user = decoded
                 next();
             })

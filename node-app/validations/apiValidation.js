@@ -3,14 +3,13 @@ const { category } = require("../models");
 
 transactionHistoryValidationRules =[
 param('id').toInt().isInt().withMessage("id must be integer")
-.custom(async(id,{req})=>{
+.custom(async(id)=>{
     const checkCategory = await category.count({
         where:{
             id:id
         }
     })
     if(checkCategory == 0) return false
-    console.log(req.body.amount, "am");
     return true
 }).withMessage("category !! not exist"),
 

@@ -33,7 +33,6 @@ getFlowData = async (req, res) => {
             },
             type: Sequelize.QueryTypes.SELECT,
         })
-        console.log(getFlow);
 
         return res.status(StatusCodes.ACCEPTED).send({
             status: true,
